@@ -13,7 +13,7 @@
         <Image Name="videoImage"
                Width="640"
                Height="480" Grid.Row="0"/>
-        <Canvas Background="Transparent" Grid.Row="0">
+        <Canvas Grid.Row="0">
             <Ellipse Fill="Red"
                      Height="20"
                      Width="20"

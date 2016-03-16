@@ -48,7 +48,7 @@ namespace KinectPowerPointControl
             sensor.SkeletonStream.Enable();
             sensor.SkeletonFrameReady += new EventHandler<SkeletonFrameReadyEventArgs>(sensor_SkeletonFrameReady);
 
-           sensor.ElevationAngle = 0;
+            sensor.ElevationAngle = 0;
 
             Application.Current.Exit += new ExitEventHandler(Current_Exit);
 
