@@ -1,0 +1,73 @@
+﻿<Window x:Class="KinectPowerPointControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kinect PowerPoint Control"
+        Height="610"
+        Width="640">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="490"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Name="videoImage"
+               Width="640"
+               Height="480" Grid.Row="0"/>
+        <Canvas Background="Transparent" Grid.Row="0">
+            <Ellipse Fill="Red"
+                     Height="20"
+                     Width="20"
+                     Name="ellipseLeftHand"
+                     Stroke="White" />
+            <Ellipse Fill="Red" 
+                     Height="20"
+                     Width="20"
+                     Name="ellipseRightHand"
+                     Stroke="White" />
+            <Ellipse Fill="Red"
+                     Height="20"
+                     Width="20"
+                     Name="ellipseHead"
+                     Stroke="White" />
+        </Canvas>
+
+        <Button Content="Ustaw kąt" 
+                Height="34" 
+                HorizontalAlignment="Left" 
+                Name="bSetTilt" 
+                VerticalAlignment="Top" 
+                Width="75" 
+                Click="bSetTilt_Click" 
+                Grid.Row="1" 
+                Margin="390,28,0,0"/>
+        <Label Content="0" 
+               HorizontalAlignment="Left" 
+               Name="lTiltValue" 
+               VerticalAlignment="Top" 
+               Width="40" 
+               Height="35" 
+               FontSize="21.333" 
+               Grid.Row="1" 
+               Margin="470,28,0,0"/>
+        <DockPanel VerticalAlignment="Center" Grid.Row="1" Margin="0,28,247,28" >
+            <TextBox Text="{Binding ElementName=sSetTilt, Path=Value, UpdateSourceTrigger=PropertyChanged}" 
+                     DockPanel.Dock="Right" 
+                     TextAlignment="Right" 
+                     Width="40" 
+                     Height="35" 
+                     FontSize="21.333" />
+            <Slider DockPanel.Dock="Left"
+                    Height="30" 
+                    HorizontalAlignment="Left"
+                    Name="sSetTilt" 
+                    VerticalAlignment="Top" 
+                    Width="300"
+                    Orientation="Horizontal" 
+                    Maximum="27" 
+                    Minimum="-27" 
+                    TickPlacement="BottomRight" 
+                    TickFrequency="1" 
+                    IsSnapToTickEnabled="True"/>
+        </DockPanel>
+    </Grid>
+</Window>
